@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="cs">    
+  <head>       
+    <meta charset="utf-8">          
+    <title>PesAleboMačka</title> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+        <h1>PesAleboMačka</h1>
+
+  </head>
+
+  <body>      
+       
+    <ul id = "main">
+      <li><a href = "/">Klasifikátor</a></li>
+      <li><a href="/about_project">O Projektu</a></li>
+      <li><a href="/about_cnn">Hluboké Učení</a></li>
+    </ul>
+
+    
+  <h2>O Projektu</h2>
+ 
+  <h3>Model</h3>
+
+  <p>Model byl vytrénován pomocí knihovny Keras používající jako backend framework TensorFlow 2.0-gpu.</p>
+  <p>Jako konvoluční bázi používá model konvoluční síť VGG16 hlavně z důvodu zvýšení přesnosti.</p>
+  <p>Nad bází jsem vytvořil hustě propojený klasifikátor.</p>
+  <p>Model byl trénován na relativně malé množině dat 2x2000 snímků z <a href="https://www.microsoft.com/en-us/download/details.aspx?id=54765">tohoto datasetu.</a></p>
+  <p>Síť byla trénována na 15 epochách, k přeučení nedošlo -> šlo trénovat dál, ale nedostatečné chlazení hardwaru to neumožňovalo.</p>
+  <p>Validační přesnot na konci trénování: ~92,2%</p>
+  <p>Model v souboru model.ipynb</p>
+
+  <h3>Systém</h3>
+
+  <p>GPU - NVIDIA GeForce 1050 Ti</p>
+  <p>OS - Linux Ubuntu 18.04</p>
+  <p>IDEs - Pycharm Professional Edition a Visual Studio Code</p>
+
+  <h3>Webové technologie</h3>
+
+  <p>Backend: flask - vybrán pro jeho jednoduchost</p>
+  <p>standart HTML a CSS</p>
+
+  <h2>Epilog a ponaučení pro příště</h2>
+
+  <p>
+    
+    Jednalo se o moje první setkání s propojením webové aplikace a modelu, proto toho jde určitě mnoho zlepšit. Ze strany modelu bude dopříště lepší trénovat
+    v cloudu za pomocí MS Azure nebo Amazon AWS. Úspěšnost není nějak hvězdná a na 99% procent se dá určitě dostat s větším datasetem a jemným dotrénováním konvoluční báze.
+    Projekt mě i přesto mnohému naučil nejen o ML ale i o tvorbě webových aplikací s backendem a umisťováním ho do hostingu. Mám toho hodně co zlepšovat a vzhlížím k dalším projektům!
+  
+  </p>
+  
+  <footer>
+    <p>
+      Pokud vás stránka zaujala nebo jste se něco dozvěděli budu rád když navštívíte můj <a href="https://github.com/Vasulda">GitHub</a>.
+    </p>
+  </footer>
+
+  </body>
+</html>

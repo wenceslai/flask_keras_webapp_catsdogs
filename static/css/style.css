@@ -1,0 +1,49 @@
+
+@import url('https://fonts.googleapis.com/css?family=Inter:400,500,700&display=swap&subset=latin-ext');
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #fffef2;
+}
+
+h1 {
+    font-size: xx-large;
+    font-weight: 900;
+}
+
+#output {
+  text-align: center;
+  font-size: xx-large;
+  font-weight: 500;
+}
+
+ ul#main {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: crimson;
+  }
+  
+  ul#main li {
+    float: left;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  ul#main li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  #out_img {
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+ 
+  ul#main li a:hover {
+    background-color: rgb(181,55,55);
+  }

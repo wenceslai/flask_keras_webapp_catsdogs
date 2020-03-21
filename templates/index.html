@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="cs">    
+  <head>       
+    <meta charset="utf-8">          
+    <title>PesAleboMačka</title> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+        <h1>PesAleboMačka</h1>
+
+  </head>
+
+  <body>     
+       
+    <ul id="main">
+      <li><a href = "/">Klasifikátor</a></li>
+      <li><a href="/about_project">O Projektu</a></li>
+      <li><a href="/about_cnn">Hluboké Učení</a></li>
+    </ul>
+
+    <header> 
+      <h2>Load your own images</h2>
+
+      <hr>
+      
+      <form action="/image_upload" method="POST" enctype="multipart/form-data">
+       
+        <div class="form-group">
+          <label>Select image</label>
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" name="image" id="image">
+            <label class="custom-file-label" for="image">Select image...</label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Upload</button>
+        
+        </form>
+        
+        <br>
+        
+        <center><img src="{{url_for('static', filename=user_image)}}", height="500", alt=" "></center>
+
+        <br>
+        <hr>
+
+        <div id="output">
+          {% if model_prediction %}
+                {% if model_prediction == "[[0]]" %}
+                    <p>Tohle je jasná KOČKA</p>
+                {% elif model_prediction == "[[1]]" %}
+                    <p>Jo tohleto je PES</p>
+                {% else %}
+                    <p>Nejsem si jistý. Buď to není ani jedno nebo to je fotografie špatná</p>
+                {% endif%}   
+          {% endif %}
+      </div>
+  </header>
+
+  </body>
+</html>
