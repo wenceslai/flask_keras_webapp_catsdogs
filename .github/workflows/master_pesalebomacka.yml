@@ -30,4 +30,4 @@ jobs:
       with:
         app-name: 'pesalebomacka'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_3b60ea27d6b644099810646414ece93e }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_d3ce75d47d0040ccbb78487232e1b555 }}
