@@ -8,8 +8,8 @@ import numpy as np
 
 app = Flask(__name__)
 
-app.config['IMAGE_UPLOADS'] = 'static/img' #img dir
-important_imgs = ["simplenn.png", "visualizing_cnn_activations.png"] #images that are used in templates
+app.config['IMAGE_UPLOADS'] = 'static/img/user_img' #img dir
+#important_imgs = ["simplenn.png", "visualizing_cnn_activations.png"] #images that are used in templates
 
 def loading_model(): 
 	json_file = open('model_cats_dogs_VGG16.json','r')
@@ -35,8 +35,6 @@ model, graph = loading_model()
 @app.route("/", methods=['GET', 'POST'])
 def home():
     for file in os.listdir(app.config['IMAGE_UPLOADS']): #deleting images loaded from user before except from important ones, dont know how to display withou saving the image
-
-        if file in important_imgs: continue
 
         file_path = os.path.join(app.config['IMAGE_UPLOADS'], file)
 
@@ -76,7 +74,7 @@ def image_upload():
                 #response = np.array_str(np.argmax(prediction,axis=1))
                 response = np.array_str(prediction)
            
-            return render_template("index.html", user_image=os.path.join('img',image.filename), model_prediction=response) #giving feedback to the user
+            return render_template("index.html", user_image=os.path.join('img/user_img',image.filename), model_prediction=response) #giving feedback to the user
 
 
 @app.route("/about_project")
