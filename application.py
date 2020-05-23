@@ -5,7 +5,7 @@ from PIL import Image
 import json
 import tensorflow as tf
 import numpy as np
-
+    
 app = Flask(__name__)
 
 app.config['IMAGE_UPLOADS'] = 'static/img/user_img' #img dir
